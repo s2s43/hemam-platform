@@ -90,7 +90,7 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        .panel-heading { font-size: 16px; color: var(--hemam-blue-light); margin-bottom: 6px; font-weight: bold; }
+        .panel-heading { font-size: 16px; color: var(--hemam-blue-light); margin-bottom: 4px; font-weight: bold; }
         .panel-subheading { color: var(--text-muted); font-size: 13px; margin-bottom: 15px; }
 
         .form-grid {
@@ -167,8 +167,10 @@
         <div class="step-card active"><div class="step-badge">4</div><div class="step-text-title">إرسال الطلب</div></div>
     </div>
 
-    <!-- فك الحماية وتمرير الاستمارة كلياً بشكل مسطح ومفتوح للجمهور 100% -->
-    <form id="hemam-integrated-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('تم إرسال طلب عرض السعر لشركة همم المتحدة بنجاح ساحق!');">
+    <!-- ربط محرك الإرسال وعرض السعر مباشرة ببريد الشركة الرسمي info@hemam-un.com وتوجيهه عبر معالج Formspree الآمن -->
+    <form id="hemam-integrated-form" action="https://formspree.io" method="POST" enctype="multipart/form-data">
+        <!-- توجيه نسخة كربونية إضافية وتوثيق اسم المرسل إليه للشركة -->
+        <input type="hidden" name="_to" value="info@hemam-un.com">
         <input type="hidden" id="hidden-products-input" name="المنتجات_المطلوبة_من_الجدول">
 
         <div class="layout-grid">
@@ -177,6 +179,5 @@
                 <!-- لوحة 1: بيانات المنشأة وطرق التواصل -->
                 <div class="card-panel">
                     <div class="panel-heading">🏢 بيانات المنشأة وطرق التواصل</div>
-                    <div class="panel-subheading">يرجى تعبئة البيانات التالية لاستكمال طلب عرض السعر القانوني.</div>
+                    <div class="panel-subheading">يرجى تعبئة البيانات التالية لاستكمال طلب عرض السعر القانوني لشركة همم.</div>
                     <div class="form-grid">
-                        <div class="form-group"><label>اسم المنشأة / الشركة</label><input type="text" name="اسم_المنشأة" required placeholder="مطعم، مقهى..."></div>
