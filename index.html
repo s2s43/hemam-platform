@@ -39,6 +39,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
         }
 
         .brand-section { display: flex; align-items: center; }
@@ -49,6 +50,31 @@
         .welcome-panel { margin-bottom: 25px; }
         .welcome-panel h1 { font-size: 24px; color: #ffffff; margin-bottom: 8px; }
         .welcome-panel p { color: var(--text-muted); font-size: 14px; max-width: 850px; }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 768px) { .steps-container { grid-template-columns: 1fr; gap: 10px; } }
+
+        .step-card {
+            background-color: var(--panel-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .step-card.active { border-color: var(--hemam-blue-light); box-shadow: 0 0 10px rgba(45, 161, 220, 0.15); }
+        .step-card.completed { border-color: var(--success-green); }
+        .step-badge { width: 24px; height: 24px; border-radius: 50%; background-color: #1e293b; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; color: #fff; }
+        .step-card.active .step-badge { background-color: var(--hemam-blue-light); }
+        .step-card.completed .step-badge { background-color: var(--success-green); }
+        .step-text-title { font-weight: bold; font-size: 13px; color: #fff; }
 
         .layout-grid {
             display: grid;
@@ -64,9 +90,10 @@
             border-radius: 10px;
             padding: 22px;
             margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        .panel-heading { font-size: 16px; color: var(--hemam-blue-light); margin-bottom: 6px; font-weight: bold; }
+        .panel-heading { font-size: 16px; color: var(--hemam-blue-light); margin-bottom: 4px; font-weight: bold; }
         .panel-subheading { color: var(--text-muted); font-size: 13px; margin-bottom: 15px; }
 
         .form-grid {
@@ -84,16 +111,20 @@
         .form-group input:focus, .form-group select:focus { border-color: var(--hemam-blue-light); }
         .form-group input[type="file"] { padding: 4px; background-color: #161f30; cursor: pointer; }
 
-        .product-table { width: 100%; border-collapse: collapse; text-align: right; margin-top: 15px; }
+        .table-container { overflow-x: auto; margin-top: 10px; border: 1px solid var(--border-color); border-radius: 6px; }
+        .product-table { width: 100%; border-collapse: collapse; text-align: right; }
         .product-table th { background-color: #161f30; color: var(--text-muted); padding: 8px 10px; font-size: 12px; border-bottom: 1px solid var(--border-color); }
         .product-table td { padding: 10px; border-bottom: 1px solid var(--border-color); font-size: 13px; background-color: var(--panel-dark); }
 
         .btn { background-color: var(--hemam-blue-light); color: #ffffff; border: none; padding: 8px 18px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 13px; }
         .btn:hover { background-color: #1d82ba; }
+        .btn-secondary { background-color: transparent; border: 1px solid var(--border-color); color: var(--text-light); padding: 8px 18px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        .btn-secondary:hover { background-color: var(--border-color); }
         .btn-success { background-color: var(--success-green); width: 100%; font-size: 14px; padding: 12px; margin-top: 15px; border: none; border-radius: 6px; color: #fff; font-weight: bold; cursor: pointer; }
+        .btn-success:hover { background-color: #0ea5e9; }
         .btn-danger { background-color: #991b1b; color: #fff; padding: 4px 8px; font-size: 11px; border: none; border-radius: 4px; cursor: pointer; }
 
-        .sidebar-section { background-color: var(--panel-dark); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; align-self: start; }
+        .sidebar-section { background-color: var(--panel-dark); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); align-self: start; }
         .sidebar-section h3 { font-size: 15px; color: #ffffff; margin-bottom: 15px; font-weight: bold; }
 
         .summary-box { background-color: var(--bg-dark); border: 1px solid var(--border-color); border-radius: 6px; padding: 12px; margin-bottom: 20px; }
@@ -115,6 +146,8 @@
         @media (max-width: 992px) { footer { grid-template-columns: 1fr; } }
         .footer-info { color: var(--text-muted); text-align: justify; }
         .footer-meta { color: var(--text-muted); text-align: left; line-height: 1.8; }
+        
+        .action-bar { display: flex; justify-content: space-between; margin-top: 25px; padding-top: 15px; border-top: 1px solid var(--border-color); }
     </style>
 </head>
 <body>
@@ -134,36 +167,14 @@
         <p>ابحث عن المنتجات، أضف الكميات المطلوبة، وارفع مستندات المنشأة الرسمية. سيقوم فريق شركة همم المتحدة التجارية بمراجعة الطلب والتواصل معك بأفضل عروض الأسعار خلال 48 ساعة عمل.</p>
     </div>
 
-    <!-- تفعيل الاستمارة المفتوحة كلياً والمربوطة ببريد شركتك info@hemam-un.com مباشرة -->
+    <!-- مؤشر تتبع الخطوات الأربعة التفاعلي -->
+    <div class="steps-container">
+        <div class="step-card active" id="node-1"><div class="step-badge">1</div><div class="step-text-title">بيانات المنشأة</div></div>
+        <div class="step-card" id="node-2"><div class="step-badge">2</div><div class="step-text-title">إضافة المنتجات والوثائق</div></div>
+        <div class="step-card" id="node-3"><div class="step-badge">3</div><div class="step-text-title">مراجعة الطلب</div></div>
+        <div class="step-card" id="node-4"><div class="step-badge">4</div><div class="step-text-title">إرسال الطلب</div></div>
+    </div>
+
+    <!-- توجيه محرك الإرسال مباشرة لإيميل الشركة info@hemam-un.com وعبر معالج التمرير الآمن -->
     <form id="hemam-integrated-form" action="https://formspree.io" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_to" value="info@hemam-un.com">
-        <input type="hidden" id="hidden-products-input" name="المنتجات_المطلوبة">
-
-        <div class="layout-grid">
-            <div class="main-content">
-                
-                <div class="card-panel">
-                    <div class="panel-heading">🏢 بيانات المنشأة وطرق التواصل</div>
-                    <div class="panel-subheading">يرجى تعبئة البيانات التالية لاستكمال طلب عرض السعر القانوني.</div>
-                    <div class="form-grid">
-                        <div class="form-group"><label>اسم المنشأة / الشركة</label><input type="text" name="اسم_المنشأة" required placeholder="مطعم، مقهى..."></div>
-                        <div class="form-group"><label>اسم المسؤول</label><input type="text" name="اسم_المسؤول" required placeholder="الاسم الثنائي..."></div>
-                        <div class="form-group"><label>رقم الجوال</label><input type="text" name="رقم_جوال_العميل" required placeholder="05xxxxxxxx"></div>
-                        <div class="form-group"><label>البريد الإلكتروني</label><input type="email" name="البريد_الإلكتروني" required placeholder="name@company.com"></div>
-                        <div class="form-group"><label>المدينة</label><input type="text" name="المدينة" required placeholder="الرياض، جدة..."></div>
-                        <div class="form-group"><label>العنوان الوطني للمنشأة</label><input type="text" name="العنوان_الوطني" required placeholder="رقم المبنى والرمز..."></div>
-                    </div>
-                </div>
-
-                <div class="card-panel">
-                    <div class="panel-heading">📦 قائمة المنتجات والأصناف المطلوبة</div>
-                    <div class="panel-subheading">اختر الصنف الشائع أو اكتب يدوياً بالأسفل، ثم اضغط إضافة صنف ليظهر بالجدول.</div>
-                    <div class="form-grid" style="grid-template-columns: 1.5fr 1.5fr 1fr 1fr; gap: 8px;">
-                        <div class="form-group">
-                            <label>اختر صنف التوريد</label>
-                            <select id="p-select" onchange="syncProductInput()">
-                                <option value="">-- اختر من الأصناف الشائعة --</option>
-                                <option value="أرز بسمتي درجة أولى">🌾 أرز بسمتي درجة أولى</option>
-                                <option value="دقيق فاخر نقي">🌾 دقيق فاخر نقي</option>
-                                <option value="زيت طبخ نباتي">🫗 زيت طبخ نباتي</option>
-                                <option value="زيت زيتون بكر ممتاز">🫗 زيت زيتون بكر ممتاز</option>
