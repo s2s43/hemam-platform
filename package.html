@@ -15,7 +15,7 @@
             --success-green: #10b981;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-light); font-size: 14px; padding: 25px; }
+        body { background-color: var(--bg-dark); color: var(--text-light); font-size: 14px; padding: 25px; line-height: 1.6; }
         header { background-color: var(--panel-dark); border: 1px solid var(--border-color); padding: 12px 25px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
         .welcome-panel { margin-bottom: 25px; }
         .welcome-panel h1 { font-size: 24px; color: #ffffff; margin-bottom: 8px; }
@@ -34,6 +34,7 @@
         .product-table th { background-color: #161f30; color: var(--text-muted); padding: 10px; font-size: 12px; border-bottom: 1px solid var(--border-color); }
         .product-table td { padding: 12px 10px; border-bottom: 1px solid var(--border-color); font-size: 13px; background-color: var(--panel-dark); }
         .btn { background-color: var(--hemam-blue-light); color: #ffffff; border: none; padding: 10px 22px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 13px; }
+        .btn:hover { background-color: #1d82ba; }
         .btn-success { background-color: var(--success-green); width: 100%; font-size: 14px; padding: 12px; margin-top: 15px; border: none; border-radius: 6px; color: #fff; font-weight: bold; cursor: pointer; }
         .btn-danger { background-color: #991b1b; color: #fff; padding: 4px 8px; font-size: 11px; border: none; border-radius: 4px; cursor: pointer; }
         .sidebar-section { background-color: var(--panel-dark); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; align-self: start; }
@@ -73,8 +74,8 @@
                     <div class="panel-heading">🏢 بيانات المنشأة وطرق التواصل</div>
                     <div class="panel-subheading">يرجى تعبئة البيانات التالية لاستكمال طلب عرض السعر القانوني لشركة همم المتحدة التجارية.</div>
                     <div class="form-grid">
-                        <div class="form-group"><label>اسم المنشأة / الشركة</label><input type="text" id="cust-org" name="اسم_المنشأة" required placeholder="مطعم، مقهى..."></div>
-                        <div class="form-group"><label>اسم المسؤول</label><input type="text" id="cust-user" name="اسم_المسؤول" required placeholder="الاسم الثنائي..."></div>
+                        <div class="form-group"><label>اسم المنشأة / الشركة</label><input type="text" name="اسم_المنشأة" required placeholder="مطعم، مقهى..."></div>
+                        <div class="form-group"><label>اسم المسؤول</label><input type="text" name="اسم_المسؤول" required placeholder="الاسم الثنائي..."></div>
                         <div class="form-group"><label>رقم الجوال</label><input type="text" name="رقم_جوال_العميل" required placeholder="05xxxxxxxx"></div>
                         <div class="form-group"><label>البريد الإلكتروني</label><input type="email" name="البريد_الإلكتروني" required placeholder="name@company.com"></div>
                         <div class="form-group"><label>المدينة</label><input type="text" name="المدينة" required placeholder="الرياض، جدة..."></div>
@@ -84,26 +85,10 @@
 
                 <div class="card-panel">
                     <div class="panel-heading">📦 قائمة المنتجات والأصناف المطلوبة</div>
-                    <div class="panel-subheading">اختر الصنف الشائع أو اكتب يدوياً بالأسفل، ثم اضغط إضافة صنف ليظهر بالجدول فوريّاً.</div>
-                    <div class="form-grid" style="grid-template-columns: 1.5fr 1.5fr 1fr 1fr; gap: 8px;">
-                        <div class="form-group">
-                            <label>اختر صنف التوريد</label>
-                            <select id="p-select" onchange="syncProductInput()">
-                                <option value="">-- اختر من الأصناف الشائعة --</option>
-                                <option value="أرز بسمتي درجة أولى">🌾 أرز بسمتي درجة أولى</option>
-                                <option value="دقيق فاخر نقي">🌾 دقيق فاخر نقي</option>
-                                <option value="زيت طبخ نباتي">🫗 زيت طبخ نباتي</option>
-                                <option value="زيت زيتون بكر ممتاز">🫗 زيت زيتون بكر ممتاز</option>
-                                <option value="بن هيل كافيه فاخر">☕ بن هيل كافيه فاخر</option>
-                                <option value="حليب طويل الأجل">🥛 حليب طويل الأجل كامل</option>
-                                <option value="سكر ناعم نقي">🍬 سكر ناعم نقي</option>
-                                <option value="ملح طعام مكرر">🧂 ملح طعام مكرر</option>
-                                <option value="لحوم ودواجن مجمدة">🍗 لحوم ودواجن مجمدة</option>
-                                <option value="مكرونة ومعجنات">🍝 مكرونة ومعجنات</option>
-                            </select>
-                        </div>
-                        <div class="form-group"><label>اسم المنتج المختار بالتفصيل</label><input type="text" id="p-name" placeholder="اسم الصنف بدقة..."></div>
-                        <div class="form-group"><label>نوع العبوة</label><input type="text" id="p-pack" placeholder="كرتون، كيس..."></div>
+                    <div class="panel-subheading">اكتب اسم الصنف والعبوة والكمية مباشرة، واضغط إضافة صنف.</div>
+                    <div class="form-grid" style="grid-template-columns: 2fr 1fr 1fr; gap: 10px;">
+                        <div class="form-group"><label>اسم المنتج المختار بالتفصيل</label><input type="text" id="p-name" placeholder="مثال: زيت زيتون بكر ممتاز..."></div>
+                        <div class="form-group"><label>نوع العبوة</label><input type="text" id="p-pack" placeholder="مثال: كرتون، كيس..."></div>
                         <div class="form-group"><label>الكمية المطلوبة</label><input type="number" id="p-qty" value="1" min="1"></div>
                     </div>
                     <div style="display: flex; justify-content: flex-end; margin-top: 10px; margin-bottom: 12px;">
@@ -119,3 +104,18 @@
                 </div>
 
                 <div class="card-panel">
+                    <div class="panel-heading">🗂️ الوثائق الرسمية والملفات القانونية</div>
+                    <div class="panel-subheading">ارفع المستندات القانونية للمنشأة لتسريع عملية الاعتماد والتسليم الفوري.</div>
+                    <div class="form-grid">
+                        <div class="form-group"><label>رفع صورة السجل التجاري (CR)</label><input type="file" name="ملف_السجل" required accept=".pdf,.jpg,.png"></div>
+                        <div class="form-group"><label>رفع الشهادة الضريبية (VAT)</label><input type="file" name="ملف_الضريبة" required accept=".pdf,.jpg,.png"></div>
+                    </div>
+                    <button type="submit" class="btn-success">تأكيد وإرسال طلب عرض السعر لشركة همم ⮜</button>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="summary-box">
+                    <h3 style="margin-bottom:6px; font-size: 13px;">📊 ملخص الطلب الحالي</h3>
+                    <div class="summary-row"><span>عدد الأصناف المطلوبة:</span><b id="side-items-count" style="color: var(--hemam-blue-light);">0 أصناف</b></div>
+                    <div class="summary-row"><span>إجمالي الكميات الكلية:</span><b id="side-qty-sum" style="color: var(--hemam-blue-light);">0 عبوة</b></div>
