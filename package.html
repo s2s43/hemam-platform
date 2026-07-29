@@ -77,10 +77,10 @@
                     </div>
                 </div>
 
-                <!-- لوحة 2: الأصناف والقائمة المنسدلة المحدثة لجميع وحدات القياس بطلبك المباشر -->
+                <!-- لوحة 2: الأصناف والقائمة المنسدلة المتكاملة بناء على فكرتك الذكية ودمج خيار "كيس" المحدث -->
                 <div class="card-panel">
                     <div class="panel-heading">📦 قائمة المنتجات والأصناف المطلوبة</div>
-                    <div class="panel-subheading">اختر صنف التوريد ونوع العبوة والكمية، ثم اضغط إضافة صنف للقائمة التفاعلية فوريّاً.</div>
+                    <div class="panel-subheading">اختر صنف التوريد ونوع العبوة والكمية، ثم اضغط إضافة صنف للقائمة الحية فوريّاً.</div>
                     <div class="form-grid" style="grid-template-columns: 1.5fr 1.5fr 1fr; gap: 10px;">
                         <div class="form-group">
                             <label>اسم المنتج المختار (مع الصور التوضيحية)</label>
@@ -102,6 +102,7 @@
                             <label>نوع العبوة (وحدة القياس المحدثة)</label>
                             <select id="p-pack">
                                 <option value="">-- اختر وحدة القياس --</option>
+                                <option value="📦 كيس">🛍️ كيس</option>
                                 <option value="📦 كرتون">📦 كرتون</option>
                                 <option value="🥫 علبة">🥫 علبة</option>
                                 <option value="🥛 حبة">🥛 حبة</option>
@@ -124,4 +125,3 @@
                         <button type="button" class="btn" onclick="addProductItem()">إضافة الصنف للقائمة +</button>
                     </div>
 
-                    <table class="product-table">
