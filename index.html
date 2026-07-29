@@ -26,7 +26,7 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             font-size: 14px;
-            padding: 20px;
+            padding: 25px;
             line-height: 1.6;
         }
 
@@ -38,7 +38,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
         }
 
@@ -47,51 +47,51 @@
         .logo-img { height: 100%; object-fit: contain; }
         .header-title { font-weight: bold; color: var(--text-light); font-size: 15px; }
 
-        .welcome-panel { margin-bottom: 20px; }
-        .welcome-panel h1 { font-size: 22px; color: #ffffff; margin-bottom: 6px; }
-        .welcome-panel p { color: var(--text-muted); font-size: 13px; max-width: 850px; }
+        .welcome-panel { margin-bottom: 25px; }
+        .welcome-panel h1 { font-size: 24px; color: #ffffff; margin-bottom: 8px; }
+        .welcome-panel p { color: var(--text-muted); font-size: 14px; max-width: 850px; }
 
         .steps-container {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 20px;
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
-        @media (max-width: 768px) { .steps-container { grid-template-columns: 1fr; gap: 8px; } }
+        @media (max-width: 768px) { .steps-container { grid-template-columns: 1fr; gap: 10px; } }
 
         .step-card {
             background-color: var(--panel-dark);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 10px 12px;
+            padding: 12px 15px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
-        .step-card.active { border-color: var(--hemam-blue-light); box-shadow: 0 0 8px rgba(45, 161, 220, 0.12); }
-        .step-badge { width: 22px; height: 22px; border-radius: 50%; background-color: var(--hemam-blue-light); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 11px; color: #fff; }
-        .step-text-title { font-weight: bold; font-size: 12px; color: #fff; }
+        .step-card.active { border-color: var(--hemam-blue-light); box-shadow: 0 0 10px rgba(45, 161, 220, 0.15); }
+        .step-badge { width: 24px; height: 24px; border-radius: 50%; background-color: var(--hemam-blue-light); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; color: #fff; }
+        .step-text-title { font-weight: bold; font-size: 13px; color: #fff; }
 
         .layout-grid {
             display: grid;
             grid-template-columns: 8fr 4fr;
-            gap: 20px;
+            gap: 25px;
         }
 
-        @media (max-width: 992px) { .layout-grid { grid-template-columns: 1fr; gap: 15px; } }
+        @media (max-width: 992px) { .layout-grid { grid-template-columns: 1fr; gap: 20px; } }
 
         .card-panel {
             background-color: var(--panel-dark);
             border: 1px solid var(--border-color);
             border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
+            padding: 22px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        .panel-heading { font-size: 15px; color: var(--hemam-blue-light); margin-bottom: 4px; font-weight: bold; }
-        .panel-subheading { color: var(--text-muted); font-size: 12px; margin-bottom: 12px; }
+        .panel-heading { font-size: 16px; color: var(--hemam-blue-light); margin-bottom: 4px; font-weight: bold; }
+        .panel-subheading { color: var(--text-muted); font-size: 13px; margin-bottom: 15px; }
 
         .form-grid {
             display: grid;
@@ -103,44 +103,44 @@
         @media (max-width: 480px) { .form-grid { grid-template-columns: 1fr; } }
 
         .form-group { display: flex; flex-direction: column; gap: 4px; }
-        .form-group label { color: var(--text-light); font-weight: 500; font-size: 12px; }
-        .form-group input, .form-group select { background-color: var(--bg-dark); border: 1px solid var(--border-color); color: #ffffff; padding: 6px 10px; border-radius: 4px; outline: none; font-size: 12px; }
+        .form-group label { color: var(--text-light); font-weight: 500; font-size: 13px; }
+        .form-group input, .form-group select { background-color: var(--bg-dark); border: 1px solid var(--border-color); color: #ffffff; padding: 7px 10px; border-radius: 4px; outline: none; font-size: 13px; }
         .form-group input:focus, .form-group select:focus { border-color: var(--hemam-blue-light); }
         .form-group input[type="file"] { padding: 4px; background-color: #161f30; cursor: pointer; }
 
         .table-container { overflow-x: auto; margin-top: 10px; border: 1px solid var(--border-color); border-radius: 6px; }
         .product-table { width: 100%; border-collapse: collapse; text-align: right; }
-        .product-table th { background-color: #161f30; color: var(--text-muted); padding: 8px; font-size: 12px; border-bottom: 1px solid var(--border-color); }
-        .product-table td { padding: 8px; border-bottom: 1px solid var(--border-color); font-size: 12px; background-color: var(--panel-dark); }
+        .product-table th { background-color: #161f30; color: var(--text-muted); padding: 8px 10px; font-size: 12px; border-bottom: 1px solid var(--border-color); }
+        .product-table td { padding: 10px; border-bottom: 1px solid var(--border-color); font-size: 13px; background-color: var(--panel-dark); }
 
-        .btn { background-color: var(--hemam-blue-light); color: #ffffff; border: none; padding: 6px 15px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px; }
+        .btn { background-color: var(--hemam-blue-light); color: #ffffff; border: none; padding: 8px 18px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 13px; }
         .btn:hover { background-color: #1d82ba; }
-        .btn-success { background-color: var(--success-green); width: 100%; font-size: 13px; padding: 12px; margin-top: 15px; border: none; border-radius: 4px; color: #fff; font-weight: bold; cursor: pointer; }
+        .btn-success { background-color: var(--success-green); width: 100%; font-size: 14px; padding: 12px; margin-top: 15px; border: none; border-radius: 6px; color: #fff; font-weight: bold; cursor: pointer; }
         .btn-success:hover { background-color: #0ea5e9; }
-        .btn-danger { background-color: #991b1b; color: #fff; padding: 4px 6px; font-size: 11px; border: none; border-radius: 4px; cursor: pointer; }
+        .btn-danger { background-color: #991b1b; color: #fff; padding: 4px 8px; font-size: 11px; border: none; border-radius: 4px; cursor: pointer; }
 
-        .sidebar-section { background-color: var(--panel-dark); border: 1px solid var(--border-color); border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); align-self: start; }
-        .sidebar-section h3 { font-size: 14px; color: #ffffff; margin-bottom: 12px; font-weight: bold; }
+        .sidebar-section { background-color: var(--panel-dark); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); align-self: start; }
+        .sidebar-section h3 { font-size: 15px; color: #ffffff; margin-bottom: 15px; font-weight: bold; }
 
-        .summary-box { background-color: var(--bg-dark); border: 1px solid var(--border-color); border-radius: 6px; padding: 10px; margin-bottom: 15px; }
-        .summary-row { display: flex; justify-content: space-between; font-size: 12px; padding: 4px 0; border-bottom: 1px dashed var(--border-color); }
+        .summary-box { background-color: var(--bg-dark); border: 1px solid var(--border-color); border-radius: 6px; padding: 12px; margin-bottom: 20px; }
+        .summary-row { display: flex; justify-content: space-between; font-size: 13px; padding: 6px 0; border-bottom: 1px dashed var(--border-color); }
         .summary-row:last-child { border-bottom: none; }
 
-        .benefits-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px; }
-        .benefit-item { display: flex; gap: 10px; align-items: flex-start; }
-        .benefit-icon { font-size: 16px; }
-        .benefit-title { color: #ffffff; font-weight: bold; font-size: 12px; }
-        .benefit-desc { color: var(--text-muted); font-size: 11px; margin-top: 2px; }
+        .benefits-list { list-style: none; display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }
+        .benefit-item { display: flex; gap: 12px; align-items: flex-start; }
+        .benefit-icon { font-size: 18px; }
+        .benefit-title { color: #ffffff; font-weight: bold; font-size: 13px; }
+        .benefit-desc { color: var(--text-muted); font-size: 12px; margin-top: 2px; }
 
-        .help-box { background-color: var(--bg-dark); border: 1px dashed var(--hemam-blue-light); border-radius: 6px; padding: 12px; }
-        .help-title { color: var(--hemam-blue-light); font-weight: bold; font-size: 13px; margin-bottom: 4px; }
-        .help-desc { color: var(--text-light); font-size: 11px; line-height: 1.4; }
-        .help-phone { display: inline-block; margin-top: 6px; color: #ffffff; font-weight: bold; font-family: monospace; background-color: var(--panel-dark); padding: 2px 8px; border-radius: 4px; border: 1px solid var(--border-color); }
+        .help-box { background-color: var(--bg-dark); border: 1px dashed var(--hemam-blue-light); border-radius: 6px; padding: 15px; }
+        .help-title { color: var(--hemam-blue-light); font-weight: bold; font-size: 14px; margin-bottom: 4px; }
+        .help-desc { color: var(--text-light); font-size: 12px; line-height: 1.5; }
+        .help-phone { display: inline-block; margin-top: 8px; color: #ffffff; font-weight: bold; font-family: monospace; background-color: var(--panel-dark); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border-color); }
 
-        footer { margin-top: 20px; display: grid; grid-template-columns: 8fr 4fr; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 12px; font-size: 11px; }
+        footer { margin-top: 25px; display: grid; grid-template-columns: 8fr 4fr; gap: 25px; border-top: 1px solid var(--border-color); padding-top: 15px; font-size: 12px; }
         @media (max-width: 992px) { footer { grid-template-columns: 1fr; } }
         .footer-info { color: var(--text-muted); text-align: justify; }
-        .footer-meta { color: var(--text-muted); text-align: left; line-height: 1.6; }
+        .footer-meta { color: var(--text-muted); text-align: left; line-height: 1.8; }
     </style>
 </head>
 <body>
@@ -167,15 +167,15 @@
         <div class="step-card active"><div class="step-badge">4</div><div class="step-text-title">إرسال الطلب</div></div>
     </div>
 
-    <!-- تفعيل الخادم المباشر واستقبال الملفات معاً في هيكل آمن ومفتوح 100% -->
-    <!-- ⚠️ استبدل معرف YOUR_FORM_ID بمعرف Formspree الخاص بك لاحقاً لربط البريد الإلكتروني -->
+    <!-- تفعيل النموذج الشامل المكشوف والمحمي تماماً من الحجب -->
+    <!-- ⚠️ استبدل معرف YOUR_FORM_ID_HERE بمعرف Formspree الخاص بك لاحقاً لربط إيميلك -->
     <form id="hemam-integrated-form" action="https://formspree.io" method="POST" enctype="multipart/form-data">
         <input type="hidden" id="hidden-products-input" name="المنتجات_المطلوبة_من_الجدول">
 
         <div class="layout-grid">
             <div class="main-content">
                 
-                <!-- القسم الأول: بيانات المنشأة -->
+                <!-- لوحة 1: بيانات المنشأة وطرق التواصل -->
                 <div class="card-panel">
                     <div class="panel-heading">🏢 بيانات المنشأة وطرق التواصل</div>
                     <div class="panel-subheading">يرجى تعبئة البيانات التالية لاستكمال طلب عرض السعر القانوني.</div>
