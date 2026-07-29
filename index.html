@@ -84,6 +84,7 @@
 
         @media (max-width: 992px) { .layout-grid { grid-template-columns: 1fr; gap: 20px; } }
 
+        /* جعل أبعاد لوحة البيانات تتوسع بشكل مرن وتلقائي بدون حجز للمساحات */
         .card-panel {
             background-color: var(--panel-dark);
             border: 1px solid var(--border-color);
@@ -91,6 +92,8 @@
             padding: 22px;
             margin-bottom: 20px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            height: auto !important;
+            min-height: max-content;
         }
 
         .panel-heading { font-size: 16px; color: var(--hemam-blue-light); margin-bottom: 4px; font-weight: bold; }
@@ -115,7 +118,7 @@
         .product-table th { background-color: #161f30; color: var(--text-muted); padding: 10px; font-size: 12px; border-bottom: 1px solid var(--border-color); }
         .product-table td { padding: 12px 10px; border-bottom: 1px solid var(--border-color); font-size: 13px; background-color: var(--panel-dark); }
 
-        .btn { background-color: var(--hemam-blue-light); color: #ffffff; border: none; padding: 10px 22px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 13px; }
+        .btn { background-color: var(--hemam-blue-light); color: #ffffff; border: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 13px; margin-top: 15px; }
         .btn:hover { background-color: #1d82ba; }
         .btn-secondary { background-color: transparent; border: 1px solid var(--border-color); color: var(--text-light); padding: 10px 22px; border-radius: 6px; font-weight: bold; cursor: pointer; }
         .btn-secondary:hover { background-color: var(--border-color); }
@@ -151,7 +154,6 @@
         .success-panel { display: none; text-align: center; padding: 40px 10px; }
         .success-icon { font-size: 55px; color: var(--success-green); margin-bottom: 15px; }
 
-        /* تفعيل وسم إظهار خطوات المشروع المتعددة بدقة مئة بالمئة كالأصل */
         .step-panel-block { display: none; }
         .step-panel-block.active-block { display: block !important; }
     </style>
@@ -177,4 +179,3 @@
         <div class="steps-container">
             <div class="step-card active" id="node-1"><div class="step-badge">1</div><div class="step-text-title">بيانات المنشأة</div></div>
             <div class="step-card" id="node-2"><div class="step-badge">2</div><div class="step-text-title">إضافة المنتجات والوثائق</div></div>
-            <div class="step-card" id="node-3"><div class="step-badge">3</div><div class="step-text-title">مراجعة الطلب</div></div>
