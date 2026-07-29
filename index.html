@@ -167,12 +167,8 @@
         <div class="step-card active"><div class="step-badge">4</div><div class="step-text-title">إرسال الطلب</div></div>
     </div>
 
-    <!-- ربط محرك الإرسال وعرض السعر مباشرة ببريد الشركة الرسمي info@hemam-un.com وتوجيهه عبر معالج Formspree الآمن -->
-    <form id="hemam-integrated-form" action="https://formspree.io" method="POST" enctype="multipart/form-data">
-        <!-- توجيه نسخة كربونية إضافية وتوثيق اسم المرسل إليه للشركة -->
-        <input type="hidden" name="_to" value="info@hemam-un.com">
-        <input type="hidden" id="hidden-products-input" name="المنتجات_المطلوبة_من_الجدول">
-
+    <!-- فك الحماية وتوجيه محرك الإرسال مباشرة لإيميل الشركة الرسمي info@hemam-un.com بدون وسيط خارجي -->
+    <form id="hemam-integrated-form" action="mailto:info@hemam-un.com" method="POST" enctype="text/plain">
         <div class="layout-grid">
             <div class="main-content">
                 
@@ -181,3 +177,5 @@
                     <div class="panel-heading">🏢 بيانات المنشأة وطرق التواصل</div>
                     <div class="panel-subheading">يرجى تعبئة البيانات التالية لاستكمال طلب عرض السعر القانوني لشركة همم.</div>
                     <div class="form-grid">
+                        <div class="form-group"><label>اسم المنشأة / الشركة</label><input type="text" name="اسم المنشأة" required placeholder="مطعم، مقهى..."></div>
+                        <div class="form-group"><label>اسم المسؤول</label><input type="text" name="اسم المسؤول" required placeholder="الاسم الثنائي..."></div>
