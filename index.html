@@ -93,7 +93,7 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        .panel-heading { font-size: 16px; color: var(--hemam-blue-light); margin-bottom: 6px; font-weight: bold; }
+        .panel-heading { font-size: 16px; color: var(--hemam-blue-light); margin-bottom: 4px; font-weight: bold; }
         .panel-subheading { color: var(--text-muted); font-size: 13px; margin-bottom: 15px; }
 
         .form-grid {
@@ -110,7 +110,8 @@
         .form-group input:focus, .form-group select:focus { border-color: var(--hemam-blue-light); }
         .form-group input[type="file"] { padding: 6px; background-color: #161f30; cursor: pointer; }
 
-        .product-table { width: 100%; border-collapse: collapse; text-align: right; margin-top: 15px; }
+        .table-container { overflow-x: auto; margin-top: 10px; border: 1px solid var(--border-color); border-radius: 6px; }
+        .product-table { width: 100%; border-collapse: collapse; text-align: right; }
         .product-table th { background-color: #161f30; color: var(--text-muted); padding: 10px; font-size: 12px; border-bottom: 1px solid var(--border-color); }
         .product-table td { padding: 12px 10px; border-bottom: 1px solid var(--border-color); font-size: 13px; background-color: var(--panel-dark); }
 
@@ -150,7 +151,7 @@
         .success-panel { display: none; text-align: center; padding: 40px 10px; }
         .success-icon { font-size: 55px; color: var(--success-green); margin-bottom: 15px; }
         
-        /* كتل النظم التفاعلية الفردية للخطوات المتعددة المستقرة */
+        /* تفعيل کتل التنقل التفاعلية المباشرة والمطابقة مئة بالمئة */
         .step-panel-block { display: none; }
         .step-panel-block.active-block { display: block; }
     </style>
@@ -177,6 +178,3 @@
             <div class="step-card active" id="node-1"><div class="step-badge">1</div><div class="step-text-title">بيانات المنشأة</div></div>
             <div class="step-card" id="node-2"><div class="step-badge">2</div><div class="step-text-title">إضافة المنتجات والوثائق</div></div>
             <div class="step-card" id="node-3"><div class="step-badge">3</div><div class="step-text-title">مراجعة الطلب</div></div>
-            <div class="step-card" id="node-4"><div class="step-badge">4</div><div class="step-text-title">إرسال الطلب</div></div>
-        </div>
-
