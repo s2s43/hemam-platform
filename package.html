@@ -15,8 +15,20 @@
             --success-green: #10b981;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-light); font-size: 14px; padding: 25px; line-height: 1.6; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-size: 14px;
+            padding: 25px;
+            line-height: 1.6;
+        }
 
         header {
             background-color: var(--panel-dark);
@@ -27,16 +39,47 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
         }
 
+        .brand-section { display: flex; align-items: center; }
+        .logo-container { height: 48px; display: flex; align-items: center; }
+        .logo-img { height: 100%; object-fit: contain; }
         .header-title { font-weight: bold; color: var(--text-light); font-size: 15px; }
 
         .welcome-panel { margin-bottom: 25px; }
         .welcome-panel h1 { font-size: 24px; color: #ffffff; margin-bottom: 8px; }
         .welcome-panel p { color: var(--text-muted); font-size: 14px; max-width: 850px; }
 
-        .layout-grid { display: grid; grid-template-columns: 8fr 4fr; gap: 25px; }
-        @media (max-width: 992px) { .layout-grid { grid-template-columns: 1fr; } }
+        .steps-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 768px) { .steps-container { grid-template-columns: 1fr; gap: 10px; } }
+
+        .step-card {
+            background-color: var(--panel-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .step-card.active { border-color: var(--hemam-blue-light); box-shadow: 0 0 10px rgba(45, 161, 220, 0.15); }
+        .step-badge { width: 24px; height: 24px; border-radius: 50%; background-color: var(--hemam-blue-light); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; color: #fff; }
+        .step-text-title { font-weight: bold; font-size: 13px; color: #fff; }
+
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 8fr 4fr;
+            gap: 25px;
+        }
+
+        @media (max-width: 992px) { .layout-grid { grid-template-columns: 1fr; gap: 20px; } }
 
         .card-panel {
             background-color: var(--panel-dark);
@@ -44,17 +87,24 @@
             border-radius: 10px;
             padding: 22px;
             margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         .panel-heading { font-size: 16px; color: var(--hemam-blue-light); margin-bottom: 6px; font-weight: bold; }
         .panel-subheading { color: var(--text-muted); font-size: 13px; margin-bottom: 15px; }
 
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
         @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } }
 
         .form-group { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
         .form-group label { color: var(--text-light); font-weight: 500; font-size: 13px; }
         .form-group input, .form-group select { background-color: var(--bg-dark); border: 1px solid var(--border-color); color: #ffffff; padding: 10px; border-radius: 6px; outline: none; font-size: 13px; width: 100%; }
+        .form-group input:focus, .form-group select:focus { border-color: var(--hemam-blue-light); }
         .form-group input[type="file"] { padding: 6px; background-color: #161f30; cursor: pointer; }
 
         .product-table { width: 100%; border-collapse: collapse; text-align: right; margin-top: 15px; }
@@ -62,32 +112,43 @@
         .product-table td { padding: 12px 10px; border-bottom: 1px solid var(--border-color); font-size: 13px; background-color: var(--panel-dark); }
 
         .btn { background-color: var(--hemam-blue-light); color: #ffffff; border: none; padding: 10px 22px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 13px; }
+        .btn:hover { background-color: #1d82ba; }
         .btn-success { background-color: var(--success-green); width: 100%; font-size: 14px; padding: 12px; margin-top: 15px; border: none; border-radius: 6px; color: #fff; font-weight: bold; cursor: pointer; }
+        .btn-success:hover { background-color: #0ea5e9; }
         .btn-danger { background-color: #991b1b; color: #fff; padding: 4px 8px; font-size: 11px; border: none; border-radius: 4px; cursor: pointer; }
 
-        .sidebar-section { background-color: var(--panel-dark); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; align-self: start; }
+        .sidebar-section { background-color: var(--panel-dark); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); align-self: start; }
         .sidebar-section h3 { font-size: 15px; color: #ffffff; margin-bottom: 15px; font-weight: bold; }
 
         .summary-box { background-color: var(--bg-dark); border: 1px solid var(--border-color); border-radius: 6px; padding: 12px; margin-bottom: 20px; }
         .summary-row { display: flex; justify-content: space-between; font-size: 13px; padding: 6px 0; border-bottom: 1px dashed var(--border-color); }
+        .summary-row:last-child { border-bottom: none; }
 
         .benefits-list { list-style: none; display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }
         .benefit-item { display: flex; gap: 12px; align-items: flex-start; }
+        .benefit-icon { font-size: 18px; }
         .benefit-title { color: #ffffff; font-weight: bold; font-size: 13px; }
-        .benefit-desc { color: var(--text-muted); font-size: 12px; }
+        .benefit-desc { color: var(--text-muted); font-size: 12px; margin-top: 2px; }
 
         .help-box { background-color: var(--bg-dark); border: 1px dashed var(--hemam-blue-light); border-radius: 6px; padding: 15px; }
-        .help-title { color: var(--hemam-blue-light); font-weight: bold; font-size: 14px; }
+        .help-title { color: var(--hemam-blue-light); font-weight: bold; font-size: 14px; margin-bottom: 4px; }
+        .help-desc { color: var(--text-light); font-size: 12px; line-height: 1.5; }
         .help-phone { display: inline-block; margin-top: 8px; color: #ffffff; font-weight: bold; font-family: monospace; background-color: var(--panel-dark); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border-color); }
 
-        footer { margin-top: 25px; display: grid; grid-template-columns: 8fr 4fr; gap: 25px; border-top: 1px solid var(--border-color); padding-top: 15px; font-size: 12px; color: var(--text-muted); }
+        footer { margin-top: 25px; display: grid; grid-template-columns: 8fr 4fr; gap: 25px; border-top: 1px solid var(--border-color); padding-top: 15px; font-size: 12px; }
+        @media (max-width: 992px) { footer { grid-template-columns: 1fr; } }
+        .footer-info { color: var(--text-muted); text-align: justify; }
+        .footer-meta { color: var(--text-muted); text-align: left; line-height: 1.8; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="brand-section">
-            <span style="font-size: 18px; font-weight: bold; color: var(--hemam-blue-light);">شركة همم المتحدة التجارية</span>
+            <div class="logo-container">
+                <img src="logo hemam.png" alt="شعار همم المتحدة" class="logo-img" onerror="this.style.display='none'; document.getElementById('alt-text').style.display='block';">
+                <span id="alt-text" style="display:none; font-size: 18px; font-weight: bold; color: var(--hemam-blue-light);">شركة همم المتحدة التجارية</span>
+            </div>
         </div>
         <div class="header-title">منصة التوريد الرقمي لقطاع الأعمال</div>
     </header>
@@ -95,6 +156,13 @@
     <div class="welcome-panel">
         <h1>اطلب عرض سعر مخصص لاحتياج منشأتك</h1>
         <p>ابحث عن المنتجات، أضف الكميات المطلوبة، وارفع مستندات المنشأة الرسمية. في غضون 48 ساعة عمل سيقوم فريق شركة همم المتحدة التجارية بمراجعة الطلب والتواصل معك بأفضل عرض سعر مخصص وتنافسي.</p>
+    </div>
+
+    <div class="steps-container">
+        <div class="step-card active"><div class="step-badge">1</div><div class="step-text-title">بيانات المنشأة</div></div>
+        <div class="step-card active"><div class="step-badge">2</div><div class="step-text-title">إضافة المنتجات والوثائق</div></div>
+        <div class="step-card active"><div class="step-badge">3</div><div class="step-text-title">مراجعة الطلب</div></div>
+        <div class="step-card active"><div class="step-badge">4</div><div class="step-text-title">إرسال الطلب</div></div>
     </div>
 
     <form id="hemam-integrated-form" action="https://formspree.io" method="POST" enctype="multipart/form-data">
@@ -110,39 +178,3 @@
                     <div class="form-grid">
                         <div class="form-group"><label>اسم المنشأة / الشركة</label><input type="text" name="اسم_المنشأة" required placeholder="مطعم، مقهى..."></div>
                         <div class="form-group"><label>اسم المسؤول</label><input type="text" name="اسم_المسؤول" required placeholder="الاسم الثنائي..."></div>
-                        <div class="form-group"><label>رقم الجوال</label><input type="text" name="رقم_جوال_العميل" required placeholder="05xxxxxxxx"></div>
-                        <div class="form-group"><label>البريد الإلكتروني</label><input type="email" name="البريد_الإلكتروني" required placeholder="name@company.com"></div>
-                        <div class="form-group"><label>المدينة</label><input type="text" name="المدينة" required placeholder="الرياض، جدة..."></div>
-                        <div class="form-group"><label>العنوان الوطني للمنشأة</label><input type="text" name="العنوان_الوطني" required placeholder="رقم المبنى والرمز..."></div>
-                    </div>
-                </div>
-
-                <div class="card-panel">
-                    <div class="panel-heading">📦 قائمة المنتجات والأصناف المطلوبة</div>
-                    <div class="panel-subheading">اختر الصنف الشائع أو اكتب يدوياً بالأسفل، ثم اضغط إضافة صنف ليظهر بالجدول فوريّاً.</div>
-                    <div class="form-grid" style="grid-template-columns: 1.5fr 1.5fr 1fr 1fr; gap: 8px;">
-                        <div class="form-group">
-                            <label>اختر صنف التوريد</label>
-                            <select id="p-select" onchange="syncProductInput()">
-                                <option value="">-- اختر من الأصناف الشائعة --</option>
-                                <option value="أرز بسمتي درجة أولى">🌾 أرز بسمتي درجة أولى</option>
-                                <option value="دقيق فاخر نقي">🌾 دقيق فاخر نقي</option>
-                                <option value="زيت طبخ نباتي">🫗 زيت طبخ نباتي</option>
-                                <option value="زيت زيتون بكر ممتاز">🫗 زيت زيتون بكر ممتاز</option>
-                                <option value="بن هيل كافيه فاخر">☕ بن هيل كافيه فاخر</option>
-                                <option value="حليب طويل الأجل">🥛 حليب طويل الأجل كامل</option>
-                                <option value="سكر ناعم نقي">🍬 سكر ناعم نقي</option>
-                                <option value="ملح طعام مكرر">🧂 ملح طعام مكرر</option>
-                                <option value="لحوم ودواجن مجمدة">🍗 لحوم ودواجن مجمدة</option>
-                                <option value="مكرونة ومعجنات">🍝 مكرونة ومعجنات</option>
-                            </select>
-                        </div>
-                        <div class="form-group"><label>اسم المنتج المختار</label><input type="text" id="p-name" placeholder="اسم الصنف بدقة..."></div>
-                        <div class="form-group"><label>العبوة</label><input type="text" id="p-pack" placeholder="كرتون، كيس..."></div>
-                        <div class="form-group"><label>الكمية</label><input type="number" id="p-qty" value="1" min="1"></div>
-                    </div>
-                    <div style="display: flex; justify-content: flex-end; margin-top: 10px; margin-bottom: 12px;">
-                        <button type="button" class="btn" onclick="addProductItem()">إضافة الصنف للقائمة +</button>
-                    </div>
-
-                    <table class="product-table">
