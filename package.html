@@ -48,7 +48,7 @@
 
     <header>
         <div style="font-size: 18px; font-weight: bold; color: var(--hemam-blue-light);">شركة همم المتحدة التجارية</div>
-        <div class="header-title">منصة الت التوريد الرقمي لقطاع الأعمال</div>
+        <div class="header-title">منصة التوريد الرقمي لقطاع الأعمال</div>
     </header>
 
     <div class="welcome-panel">
@@ -63,7 +63,6 @@
         <div class="layout-grid">
             <div class="main-content">
                 
-                <!-- لوحة 1: بيانات المنشأة -->
                 <div class="card-panel">
                     <div class="panel-heading">🏢 بيانات المنشأة وطرق التواصل</div>
                     <div class="panel-subheading">يرجى تعبئة البيانات التالية لاستكمال طلب عرض السعر القانوني لشركة همم المتحدة التجارية.</div>
@@ -77,45 +76,44 @@
                     </div>
                 </div>
 
-                <!-- لوحة 2: قائمة المنتجات والأصناف -->
                 <div class="card-panel">
                     <div class="panel-heading">📦 قائمة المنتجات والأصناف المطلوبة</div>
-                    <div class="panel-subheading">اختر الصنف من القائمة واكتب العبوة والكمية مباشرة، واضغط إضافة صنف.</div>
+                    <div class="panel-subheading">اختر المنتج ونوع العبوة والكمية، ثم اضغط إضافة صنف للقائمة.</div>
                     <div class="form-grid" style="grid-template-columns: 1.5fr 1.5fr 1fr; gap: 10px;">
                         <div class="form-group">
-                            <label>اسم المنتج المختار</label>
+                            <label>اسم المنتج المختار بالتفصيل</label>
                             <select id="p-select">
                                 <option value="">-- اختر الصنف المطلوب --</option>
-                                <option value="أرز بسمتي درجة أولى">أرز بسمتي درجة أولى</option>
-                                <option value="دقيق فاخر نقي">دقيق فاخر نقي</option>
-                                <option value="زيت طبخ نباتي">زيت طبخ نباتي</option>
-                                <option value="زيت زيتون بكر ممتاز">زيت زيتون بكر ممتاز</option>
-                                <option value="بن هيل كافيه فاخر">بن هيل كافيه فاخر</option>
-                                <option value="حليب طويل الأجل كامل">حليب طويل الأجل كامل</option>
-                                <option value="سكر ناعم نقي">سكر ناعم نقي</option>
-                                <option value="ملح طعام مكرر">ملح طعام مكرر</option>
-                                <option value="لحوم ودواجن مجمدة">لحوم ودواجن مجمدة</option>
-                                <option value="مكرونة ومعجنات">مكرونة ومعجنات</option>
+                                <option value="🌾 أرز بسمتي درجة أولى">🌾 أرز بسمتي درجة أولى</option>
+                                <option value="🌾 دقيق فاخر نقي">🌾 دقيق فاخر نقي</option>
+                                <option value="🫗 زيت طبخ نباتي">🫗 زيت طبخ نباتي</option>
+                                <option value="🫗 زيت زيتون بكر ممتاز">🫗 زيت زيتون بكر ممتاز</option>
+                                <option value="☕ بن هيل كافيه فاخر">☕ بن هيل كافيه فاخر</option>
+                                <option value="🥛 حليب طويل الأجل كامل">🥛 حليب طويل الأجل كامل</option>
+                                <option value="🍬 سكر ناعم نقي">🍬 سكر ناعم نقي</option>
+                                <option value="🧂 ملح طعام مكرر">🧂 ملح طعام مكرر</option>
+                                <option value="🍗 لحوم ودواجن مجمدة">🍗 لحوم ودواجن مجمدة</option>
+                                <option value="🍝 مكرونة ومعجنات">🍝 مكرونة ومعجنات</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>نوع العبوة (وحدة القياس)</label>
                             <select id="p-pack">
-                                <option value="">-- اختر الوحدة --</option>
-                                <option value="كرتون">كرتون</option>
-                                <option value="علبة">علبة</option>
-                                <option value="حبة">حبة</option>
-                                <option value="شوال">شوال</option>
-                                <option value="درزن">درزن</option>
-                                <option value="شدة">شدة</option>
-                                <option value="برميل">برميل</option>
-                                <option value="سطل">سطل</option>
-                                <option value="عبوة">عبوة</option>
-                                <option value="كرت">كرت</option>
-                                <option value="ظرف">ظرف</option>
-                                <option value="مغلف">مغلف</option>
-                                <option value="جالون">جالون</option>
-                                <option value="متر">متر</option>
+                                <option value="">-- اختر وحدة القياس --</option>
+                                <option value="📦 كرتون">📦 كرتون</option>
+                                <option value="🥫 علبة">CN <b>علبة</b></option>
+                                <option value="🥛 حبة">🥛 حبة</option>
+                                <option value="🛍️ شوال">شوال</option>
+                                <option value="🔢 درزن">درزن</option>
+                                <option value="🪵 شدة">شدة</option>
+                                <option value="🛢️ برميل">برميل</option>
+                                <option value="🪣 سطل">سطل</option>
+                                <option value="🧴 عبوة">عبوة</option>
+                                <option value="🗂️ كرت">كرت</option>
+                                <option value="✉️ ظرف">ظرف</option>
+                                <option value="📦 مغلف">مغلف</option>
+                                <option value="🧪 جالون">جالون</option>
+                                <option value="📏 متر">متر</option>
                             </select>
                         </div>
                         <div class="form-group"><label>الكمية المطلوبة</label><input type="number" id="p-qty" value="1" min="1"></div>
