@@ -41,13 +41,6 @@
         .sidebar-section h3 { font-size: 15px; color: #ffffff; margin-bottom: 15px; font-weight: bold; }
         .summary-box { background-color: var(--bg-dark); border: 1px solid var(--border-color); border-radius: 6px; padding: 12px; margin-bottom: 20px; }
         .summary-row { display: flex; justify-content: space-between; font-size: 13px; padding: 6px 0; border-bottom: 1px dashed var(--border-color); }
-        .benefits-list { list-style: none; display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }
-        .benefit-item { display: flex; gap: 12px; align-items: flex-start; }
-        .benefit-title { color: #ffffff; font-weight: bold; font-size: 13px; }
-        .benefit-desc { color: var(--text-muted); font-size: 12px; }
-        .help-box { background-color: var(--bg-dark); border: 1px dashed var(--hemam-blue-light); border-radius: 6px; padding: 15px; }
-        .help-title { color: var(--hemam-blue-light); font-weight: bold; font-size: 14px; }
-        .help-phone { display: inline-block; margin-top: 8px; color: #ffffff; font-weight: bold; font-family: monospace; background-color: var(--panel-dark); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border-color); }
         footer { margin-top: 25px; display: grid; grid-template-columns: 8fr 4fr; gap: 25px; border-top: 1px solid var(--border-color); padding-top: 15px; font-size: 12px; }
     </style>
 </head>
@@ -91,19 +84,19 @@
                             <label>اسم المنتج المختار</label>
                             <select id="p-select">
                                 <option value="">-- اختر الصنف المطلوب --</option>
-                                <option value="🌾 أرز بسمتي درجة أولى">🌾 أرز بسمتي درجة أولى</option>
-                                <option value="🌾 دقيق فاخر نقي">🌾 دقيق فاخر نقي</option>
-                                <option value="🫗 زيت طبخ نباتي">🫗 زيت طبخ نباتي</option>
-                                <option value="🫗 زيت زيتون بكر ممتاز">🫗 زيت زيتون بكر ممتاز</option>
-                                <option value="☕ بن هيل كافيه فاخر">☕ بن هيل كافيه فاخر</option>
-                                <option value="🥛 حليب طويل الأجل كامل">🥛 حليب طويل الأجل كامل</option>
-                                <option value="🍬 سكر ناعم نقي">🍬 سكر ناعم نقي</option>
-                                <option value="🧂 ملح طعام مكرر">🧂 ملح طعام مكرر</option>
-                                <option value="🍗 لحوم ودواجن مجمدة">🍗 لحوم ودواجن مجمدة</option>
-                                <option value="🍝 مكرونة ومعجنات">🍝 مكرونة ومعجنات</option>
+                                <option value="أرز بسمتي درجة أولى">أرز بسمتي درجة أولى</option>
+                                <option value="دقيق فاخر نقي">دقيق فاخر نقي</option>
+                                <option value="زيت طبخ نباتي">زيت طبخ نباتي</option>
+                                <option value="زيت زيتون بكر ممتاز">زيت زيتون بكر ممتاز</option>
+                                <option value="بن هيل كافيه فاخر">بن هيل كافيه فاخر</option>
+                                <option value="حليب طويل الأجل كامل">حليب طويل الأجل كامل</option>
+                                <option value="سكر ناعم نقي">سكر ناعم نقي</option>
+                                <option value="ملح طعام مكرر">ملح طعام مكرر</option>
+                                <option value="لحوم ودواجن مجمدة">لحوم ودواجن مجمدة</option>
+                                <option value="مكرونة ومعجنات">مكرونة ومعجنات</option>
                             </select>
                         </div>
-                        <div class="form-group"><label>نوع العبوة</label><input type="text" id="p-pack" placeholder="مثال: كرتون، كيس..."></div>
+                        <div class="form-group"><label>نوع العبوة</label><input type="text" id="p-pack" placeholder="مثال: كرتون..."></div>
                         <div class="form-group"><label>الكمية المطلوبة</label><input type="number" id="p-qty" value="1" min="1"></div>
                     </div>
                     <div style="display: flex; justify-content: flex-end; margin-top: 10px; margin-bottom: 12px;">
@@ -115,8 +108,20 @@
                         <tbody id="product-list-rows"></tbody>
                     </table>
 
-                    <div class="form-group" style="margin-top: 15px;"><label>لديك قائمة جاهزة؟ ارفع ملف الأصناف (Excel / PDF / اختياري)</label><input type="file" name="ملف_الأصناف_الخارجي" accept=".pdf,.xlsx,.xls,.txt"></div>
+                    <div class="form-group" style="margin-top: 15px;"><label>لديك قائمة جاهزة؟ ارفع ملف الأصناف (اختياري)</label><input type="file" name="ملف_الأصناف_الخارجي" accept=".pdf,.xlsx,.xls,.txt"></div>
                 </div>
 
                 <div class="card-panel">
                     <div class="panel-heading">🗂️ الوثائق الرسمية والملفات القانونية</div>
+                    <div class="panel-subheading">ارفع المستندات القانونية للمنشأة لتسريع الاعتماد والتسليم.</div>
+                    <div class="form-grid">
+                        <div class="form-group"><label>رفع صورة السجل التجاري (CR)</label><input type="file" name="ملف_السجل" required accept=".pdf,.jpg,.png"></div>
+                        <div class="form-group"><label>رفع الشهادة الضريبية (VAT)</label><input type="file" name="ملف_الضريبة" required accept=".pdf,.jpg,.png"></div>
+                    </div>
+                    <button type="submit" class="btn-success">تأكيد وإرسال طلب عرض السعر لشركة همم ⮜</button>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="summary-box">
+                    <h3 style="margin-bottom:6px; font-size: 13px;">📊 ملخص الطلب الحالي</h3>
