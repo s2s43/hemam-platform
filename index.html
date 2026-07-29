@@ -148,6 +148,10 @@
         .footer-meta { color: var(--text-muted); text-align: left; line-height: 1.8; }
         
         .action-bar { display: flex; justify-content: space-between; margin-top: 25px; padding-top: 15px; border-top: 1px solid var(--border-color); }
+        
+        /* شاشة تأكيد النجاح الكاملة المخفية حركياً */
+        .success-panel { display: none; text-align: center; padding: 40px 10px; }
+        .success-icon { font-size: 55px; color: var(--success-green); margin-bottom: 15px; }
     </style>
 </head>
 <body>
@@ -162,19 +166,16 @@
         <div class="header-title">منصة التوريد الرقمي لقطاع الأعمال</div>
     </header>
 
-    <div class="welcome-panel">
-        <h1>اطلب عرض سعر مخصص لاحتياج منشأتك</h1>
-        <p>ابحث عن المنتجات، أضف الكميات المطلوبة، وارفع مستندات المنشأة الرسمية. سيقوم فريق شركة همم المتحدة التجارية بمراجعة الطلب والتواصل معك بأفضل عروض الأسعار خلال 48 ساعة عمل.</p>
-    </div>
+    <div id="workflow-main-block">
+        <div class="welcome-panel">
+            <h1>اطلب عرض سعر مخصص لاحتياج منشأتك</h1>
+            <p>ابحث عن المنتجات، أضف الكميات المطلوبة، وارفع مستندات المنشأة الرسمية. سيقوم فريق شركة همم المتحدة التجارية بمراجعة الطلب والتواصل معك بأفضل عروض الأسعار خلال 48 ساعة عمل.</p>
+        </div>
 
-    <!-- مؤشر تتبع الخطوات الأربعة التفاعلي -->
-    <div class="steps-container">
-        <div class="step-card active" id="node-1"><div class="step-badge">1</div><div class="step-text-title">بيانات المنشأة</div></div>
-        <div class="step-card" id="node-2"><div class="step-badge">2</div><div class="step-text-title">إضافة المنتجات والوثائق</div></div>
-        <div class="step-card" id="node-3"><div class="step-badge">3</div><div class="step-text-title">مراجعة الطلب</div></div>
-        <div class="step-card" id="node-4"><div class="step-badge">4</div><div class="step-text-title">إرسال الطلب</div></div>
-    </div>
+        <div class="steps-container">
+            <div class="step-card active" id="node-1"><div class="step-badge">1</div><div class="step-text-title">بيانات المنشأة</div></div>
+            <div class="step-card" id="node-2"><div class="step-badge">2</div><div class="step-text-title">إضافة المنتجات والوثائق</div></div>
+            <div class="step-card" id="node-3"><div class="step-badge">3</div><div class="step-text-title">مراجعة الطلب</div></div>
+            <div class="step-card" id="node-4"><div class="step-badge">4</div><div class="step-text-title">إرسال الطلب</div></div>
+        </div>
 
-    <!-- توجيه محرك الإرسال مباشرة لإيميل الشركة info@hemam-un.com وعبر معالج التمرير الآمن -->
-    <form id="hemam-integrated-form" action="https://formspree.io" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="_to" value="info@hemam-un.com">
