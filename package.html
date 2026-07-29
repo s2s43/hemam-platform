@@ -22,7 +22,7 @@
         .welcome-panel p { color: var(--text-muted); font-size: 14px; }
         .layout-grid { display: grid; grid-template-columns: 8fr 4fr; gap: 25px; }
         @media (max-width: 992px) { .layout-grid { grid-template-columns: 1fr; } }
-        .card-panel { background-color: var(--panel-dark); border: 1px solid var(--border-color); border-radius: 10px; padding: 22px; margin-bottom: 20px; }
+        .card-panel { background-color: var(--panel-dark); border: 1px solid var(--border-color); border-radius: 10px; padding: 22px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
         .panel-heading { font-size: 16px; color: var(--hemam-blue-light); margin-bottom: 6px; font-weight: bold; }
         .panel-subheading { color: var(--text-muted); font-size: 13px; margin-bottom: 15px; }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
@@ -78,12 +78,12 @@
 
                 <div class="card-panel">
                     <div class="panel-heading">📦 قائمة المنتجات والأصناف المطلوبة</div>
-                    <div class="panel-subheading">اختر المنتج والعبوة والكمية بالتفصيل، ثم اضغط إضافة صنف للقائمة الحية فوريّاً.</div>
+                    <div class="panel-subheading">اختر صنف التوريد ونوع العبوة والكمية، ثم اضغط إضافة صنف للقائمة.</div>
                     <div class="form-grid" style="grid-template-columns: 1.5fr 1.5fr 1fr; gap: 10px;">
                         <div class="form-group">
                             <label>اسم المنتج المختار (مع الصور التوضيحية)</label>
                             <select id="p-select">
-                                <option value="">-- اختر المنتج المطلوبة --</option>
+                                <option value="">-- اختر الصنف المطلوب --</option>
                                 <option value="🌾 أرز بسمتي درجة أولى">🌾 أرز بسمتي درجة أولى</option>
                                 <option value="🌾 دقيق فاخر نقي">🌾 دقيق فاخر نقي</option>
                                 <option value="🫗 زيت طبخ نباتي">🫗 زيت طبخ نباتي</option>
