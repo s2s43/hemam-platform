@@ -81,6 +81,7 @@
 
         @media (max-width: 992px) { .layout-grid { grid-template-columns: 1fr; gap: 20px; } }
 
+        /* تمدد الصناديق قسرياً وتلقائياً لمنع أي حبس أو إخفاء تحت الشاشة */
         .card-panel {
             background-color: var(--panel-dark);
             border: 1px solid var(--border-color);
@@ -88,6 +89,9 @@
             padding: 22px;
             margin-bottom: 20px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            height: auto !important;
+            min-height: max-content !important;
+            overflow: visible !important;
         }
 
         .panel-heading { font-size: 16px; color: var(--hemam-blue-light); margin-bottom: 6px; font-weight: bold; }
@@ -172,10 +176,9 @@
         <div class="layout-grid">
             <div class="main-content">
                 
-                <!-- لوحة 1: بيانات المنشأة وطرق التواصل المستقرة المفتوحة كلياً للأسفل -->
+                <!-- لوحة 1: بيانات المنشأةوطرق التواصل مكشوفة بالكامل دفعة واحدة -->
                 <div class="card-panel">
                     <div class="panel-heading">🏢 بيانات المنشأة وطرق التواصل</div>
                     <div class="panel-subheading">يرجى تعبئة البيانات التالية لاستكمال طلب عرض السعر القانوني لشركة همم المتحدة التجارية.</div>
                     <div class="form-grid">
                         <div class="form-group"><label>اسم المنشأة / الشركة</label><input type="text" name="اسم_المنشأة" required placeholder="مطعم، مقهى..."></div>
-                        <div class="form-group"><label>اسم المسؤول</label><input type="text" name="اسم_المسؤول" required placeholder="الاسم الثنائي..."></div>
