@@ -51,6 +51,28 @@
         .welcome-panel h1 { font-size: 24px; color: #ffffff; margin-bottom: 8px; }
         .welcome-panel p { color: var(--text-muted); font-size: 14px; max-width: 850px; }
 
+        .steps-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 768px) { .steps-container { grid-template-columns: 1fr; gap: 10px; } }
+
+        .step-card {
+            background-color: var(--panel-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .step-card.active { border-color: var(--hemam-blue-light); box-shadow: 0 0 10px rgba(45, 161, 220, 0.15); }
+        .step-badge { width: 24px; height: 24px; border-radius: 50%; background-color: var(--hemam-blue-light); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; color: #fff; }
+        .step-text-title { font-weight: bold; font-size: 13px; color: #fff; }
+
         .layout-grid {
             display: grid;
             grid-template-columns: 8fr 4fr;
@@ -138,6 +160,13 @@
         <p>ابحث عن المنتجات، أضف الكميات المطلوبة، وارفع مستندات المنشأة الرسمية. سيقوم فريق شركة همم المتحدة التجارية بمراجعة الطلب والتواصل معك بأفضل عروض الأسعار خلال 48 ساعة عمل.</p>
     </div>
 
+    <div class="steps-container">
+        <div class="step-card active"><div class="step-badge">1</div><div class="step-text-title">بيانات المنشأة</div></div>
+        <div class="step-card active"><div class="step-badge">2</div><div class="step-text-title">إضافة المنتجات والوثائق</div></div>
+        <div class="step-card active"><div class="step-badge">3</div><div class="step-text-title">مراجعة الطلب</div></div>
+        <div class="step-card active"><div class="step-badge">4</div><div class="step-text-title">إرسال الطلب</div></div>
+    </div>
+
     <form id="hemam-integrated-form" action="https://formspree.io" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_to" value="info@hemam-un.com">
         <input type="hidden" id="hidden-products-input" name="المنتجات_المطلوبة_من_الجدول">
@@ -151,19 +180,3 @@
                     <div class="form-grid">
                         <div class="form-group"><label>اسم المنشأة / الشركة</label><input type="text" name="اسم_المنشأة" required placeholder="مطعم، مقهى..."></div>
                         <div class="form-group"><label>اسم المسؤول</label><input type="text" name="اسم_المسؤول" required placeholder="الاسم الثنائي..."></div>
-                        <div class="form-group"><label>رقم الجوال</label><input type="text" name="رقم_جوال_العميل" required placeholder="05xxxxxxxx"></div>
-                        <div class="form-group"><label>البريد الإلكتروني</label><input type="email" name="البريد_الإلكتروني" required placeholder="name@company.com"></div>
-                        <div class="form-group"><label>المدينة</label><input type="text" name="المدينة" required placeholder="الرياض، جدة..."></div>
-                        <div class="form-group"><label>العنوان الوطني للمنشأة</label><input type="text" name="العنوان_الوطني" required placeholder="رقم المبنى والرمز..."></div>
-                    </div>
-                </div>
-
-                <div class="card-panel">
-                    <div class="panel-heading">📦 قائمة المنتجات والأصناف المطلوبة</div>
-                    <div class="panel-subheading">اختر الصنف الشائع أو اكتب يدوياً بالأسفل، ثم اضغط إضافة صنف ليظهر بالجدول فوريّاً.</div>
-                    <div class="form-grid" style="grid-template-columns: 1.5fr 1.5fr 1fr 1fr; gap: 8px;">
-                        <div class="form-group">
-                            <label>اختر صنف التوريد</label>
-                            <select id="p-select" onchange="syncProductInput()">
-                                <option value="">-- اختر من الأصناف الشائعة --</option>
-                                <option value="أرز بسمتي درجة أولى">🌾 أرز بسمتي درجة أولى</option>
