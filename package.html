@@ -85,9 +85,24 @@
 
                 <div class="card-panel">
                     <div class="panel-heading">📦 قائمة المنتجات والأصناف المطلوبة</div>
-                    <div class="panel-subheading">اكتب اسم الصنف والعبوة والكمية مباشرة، واضغط إضافة صنف.</div>
+                    <div class="panel-subheading">اختر الصنف من القائمة واكتب العبوة والكمية مباشرة، واضغط إضافة صنف.</div>
                     <div class="form-grid" style="grid-template-columns: 2fr 1fr 1fr; gap: 10px;">
-                        <div class="form-group"><label>اسم المنتج المختار بالتفصيل</label><input type="text" id="p-name" placeholder="مثال: زيت زيتون بكر ممتاز..."></div>
+                        <div class="form-group">
+                            <label>اسم المنتج المختار</label>
+                            <select id="p-select">
+                                <option value="">-- اختر الصنف المطلوبة --</option>
+                                <option value="🌾 أرز بسمتي درجة أولى">🌾 أرز بسمتي درجة أولى</option>
+                                <option value="🌾 دقيق فاخر نقي">🌾 دقيق فاخر نقي</option>
+                                <option value="🫗 زيت طبخ نباتي">🫗 زيت طبخ نباتي</option>
+                                <option value="🫗 زيت زيتون بكر ممتاز">🫗 زيت زيتون بكر ممتاز</option>
+                                <option value="☕ بن هيل كافيه فاخر">☕ بن هيل كافيه فاخر</option>
+                                <option value="🥛 حليب طويل الأجل كامل">🥛 حليب طويل الأجل كامل</option>
+                                <option value="🍬 سكر ناعم نقي">🍬 سكر ناعم نقي</option>
+                                <option value="🧂 ملح طعام مكرر">🧂 ملح طعام مكرر</option>
+                                <option value="🍗 لحوم ودواجن مجمدة">🍗 لحوم ودواجن مجمدة</option>
+                                <option value="🍝 مكرونة ومعجنات">🍝 مكرونة ومعجنات</option>
+                            </select>
+                        </div>
                         <div class="form-group"><label>نوع العبوة</label><input type="text" id="p-pack" placeholder="مثال: كرتون، كيس..."></div>
                         <div class="form-group"><label>الكمية المطلوبة</label><input type="number" id="p-qty" value="1" min="1"></div>
                     </div>
@@ -105,17 +120,3 @@
 
                 <div class="card-panel">
                     <div class="panel-heading">🗂️ الوثائق الرسمية والملفات القانونية</div>
-                    <div class="panel-subheading">ارفع المستندات القانونية للمنشأة لتسريع عملية الاعتماد والتسليم الفوري.</div>
-                    <div class="form-grid">
-                        <div class="form-group"><label>رفع صورة السجل التجاري (CR)</label><input type="file" name="ملف_السجل" required accept=".pdf,.jpg,.png"></div>
-                        <div class="form-group"><label>رفع الشهادة الضريبية (VAT)</label><input type="file" name="ملف_الضريبة" required accept=".pdf,.jpg,.png"></div>
-                    </div>
-                    <button type="submit" class="btn-success">تأكيد وإرسال طلب عرض السعر لشركة همم ⮜</button>
-                </div>
-            </div>
-
-            <div class="sidebar-section">
-                <div class="summary-box">
-                    <h3 style="margin-bottom:6px; font-size: 13px;">📊 ملخص الطلب الحالي</h3>
-                    <div class="summary-row"><span>عدد الأصناف المطلوبة:</span><b id="side-items-count" style="color: var(--hemam-blue-light);">0 أصناف</b></div>
-                    <div class="summary-row"><span>إجمالي الكميات الكلية:</span><b id="side-qty-sum" style="color: var(--hemam-blue-light);">0 عبوة</b></div>
