@@ -15,7 +15,19 @@
             --success-green: #10b981;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-light); font-size: 14px; padding: 25px; line-height: 1.6; }
+        
+        /* إجبار المتصفح على تفعيل شريط السحب الرأسي ومنع الحبس البصري */
+        html, body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-light); 
+            font-size: 14px; 
+            padding: 25px; 
+            line-height: 1.6;
+            height: auto !important;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+        }
+        
         header { background-color: var(--panel-dark); border: 1px solid var(--border-color); padding: 12px 25px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
         .welcome-panel { margin-bottom: 25px; }
         .welcome-panel h1 { font-size: 24px; color: #ffffff; margin-bottom: 8px; }
@@ -23,7 +35,6 @@
         .layout-grid { display: grid; grid-template-columns: 8fr 4fr; gap: 25px; }
         @media (max-width: 992px) { .layout-grid { grid-template-columns: 1fr; gap: 20px; } }
         
-        /* إلغاء أي قفل للارتفاع قسرياً لمنع حجب الملفات والأزرار بالأسفل */
         .card-panel { 
             background-color: var(--panel-dark); 
             border: 1px solid var(--border-color); 
@@ -34,7 +45,6 @@
             height: auto !important;
             min-height: max-content !important;
             overflow: visible !important;
-            display: block !important;
         }
         
         .panel-heading { font-size: 16px; color: var(--hemam-blue-light); margin-bottom: 6px; font-weight: bold; }
@@ -62,8 +72,8 @@
     </header>
 
     <div class="welcome-panel">
-        <h1>اطلب عرض سعر مخصص لاحتياج منشأتك</h1>
-        <p>حدد الكميات والعبوات المطلوبة بالأسفل، وارفع مستندات المنشأة الرسمية، ثم اضغط تأكيد الطلب بالإسفل.</p>
+        <h1>اطلب عرض سعر مخصص لااحتياج منشأتك</h1>
+        <p>حدد الكميات والعبوات المطلوبة بالأسفل، وارفع مستندات المنشأة الرسمية، ثم اضغط تأكيد الطلب بالأسفل.</p>
     </div>
 
     <form id="hemam-integrated-form" action="https://formspree.io" method="POST" enctype="multipart/form-data">
@@ -72,7 +82,6 @@
         <div class="layout-grid">
             <div class="main-content">
                 
-                <!-- لوحة 1: بيانات المنشأة وطرق التواصل -->
                 <div class="card-panel">
                     <div class="panel-heading">🏢 بيانات المنشأة وطرق التواصل</div>
                     <div class="panel-subheading">يرجى تعبئة البيانات التالية لاستكمال طلب عرض السعر القانوني لشركة همم المتحدة التجارية.</div>
@@ -86,7 +95,6 @@
                     </div>
                 </div>
 
-                <!-- لوحة 2: قائمة طلب المنتجات المفرودة والمفتوحة كلياً للأسفل -->
                 <div class="card-panel">
                     <div class="panel-heading">📦 تفاصيل أصناف وكميات التوريد المطلوبة</div>
                     <div class="panel-subheading">حدد العبوة والكمية المطلوبة لكل صنف تجاري لشركة همم مباشرة بالخانات أدناه:</div>
