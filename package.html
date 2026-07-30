@@ -22,7 +22,21 @@
         .welcome-panel p { color: var(--text-muted); font-size: 14px; }
         .layout-grid { display: grid; grid-template-columns: 8fr 4fr; gap: 25px; }
         @media (max-width: 992px) { .layout-grid { grid-template-columns: 1fr; gap: 20px; } }
-        .card-panel { background-color: var(--panel-dark); border: 1px solid var(--border-color); border-radius: 10px; padding: 22px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        
+        /* إلغاء أي قفل للارتفاع قسرياً لمنع حجب الملفات والأزرار بالأسفل */
+        .card-panel { 
+            background-color: var(--panel-dark); 
+            border: 1px solid var(--border-color); 
+            border-radius: 10px; 
+            padding: 22px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            height: auto !important;
+            min-height: max-content !important;
+            overflow: visible !important;
+            display: block !important;
+        }
+        
         .panel-heading { font-size: 16px; color: var(--hemam-blue-light); margin-bottom: 6px; font-weight: bold; }
         .panel-subheading { color: var(--text-muted); font-size: 13px; margin-bottom: 15px; }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
@@ -30,14 +44,14 @@
         .form-group { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
         .form-group label { color: var(--text-light); font-weight: 500; font-size: 13px; }
         .form-group input, .form-group select { background-color: var(--bg-dark); border: 1px solid var(--border-color); color: #ffffff; padding: 10px; border-radius: 6px; outline: none; font-size: 13px; width: 100%; }
-        .product-table { width: 100%; border-collapse: collapse; text-align: right; margin-top: 15px; }
+        .product-table { width: 100%; border-collapse: collapse; text-align: right; margin-top: 15px; margin-bottom: 20px; }
         .product-table th { background-color: #161f30; color: var(--text-muted); padding: 10px; font-size: 12px; border-bottom: 1px solid var(--border-color); }
         .product-table td { padding: 12px 10px; border-bottom: 1px solid var(--border-color); font-size: 13px; background-color: var(--panel-dark); }
-        .btn-success { background-color: var(--success-green); width: 100%; font-size: 14px; padding: 12px; margin-top: 15px; border: none; border-radius: 6px; color: #fff; font-weight: bold; cursor: pointer; }
+        .btn-success { background-color: var(--success-green); width: 100%; font-size: 14px; padding: 15px; margin-top: 25px; border: none; border-radius: 6px; color: #fff; font-weight: bold; cursor: pointer; display: block !important; }
         .sidebar-section { background-color: var(--panel-dark); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; align-self: start; }
         .summary-box { background-color: var(--bg-dark); border: 1px solid var(--border-color); border-radius: 6px; padding: 12px; margin-bottom: 20px; }
         .summary-row { display: flex; justify-content: space-between; font-size: 13px; padding: 6px 0; border-bottom: 1px dashed var(--border-color); }
-        footer { margin-top: 25px; display: grid; grid-template-columns: 8fr 4fr; gap: 25px; border-top: 1px solid var(--border-color); padding-top: 15px; font-size: 12px; }
+        footer { margin-top: 25px; border-top: 1px solid var(--border-color); padding-top: 15px; font-size: 12px; }
     </style>
 </head>
 <body>
@@ -49,7 +63,7 @@
 
     <div class="welcome-panel">
         <h1>اطلب عرض سعر مخصص لاحتياج منشأتك</h1>
-        <p>ابحث عن المنتجات، حدد الكميات والعبوات المطلوبة بالأسفل، وارفع مستندات المنشأة الرسمية. ليتولى فريق شركة همم المتحدة التجارية مراجعة طلبكم فوريّاً.</p>
+        <p>حدد الكميات والعبوات المطلوبة بالأسفل، وارفع مستندات المنشأة الرسمية، ثم اضغط تأكيد الطلب بالإسفل.</p>
     </div>
 
     <form id="hemam-integrated-form" action="https://formspree.io" method="POST" enctype="multipart/form-data">
@@ -72,7 +86,7 @@
                     </div>
                 </div>
 
-                <!-- لوحة 2: قائمة طلب المنتجات المفتوحة والمكشوفة كلياً للأسفل بدون أزرار حظر جافا سكريبت -->
+                <!-- لوحة 2: قائمة طلب المنتجات المفرودة والمفتوحة كلياً للأسفل -->
                 <div class="card-panel">
                     <div class="panel-heading">📦 تفاصيل أصناف وكميات التوريد المطلوبة</div>
                     <div class="panel-subheading">حدد العبوة والكمية المطلوبة لكل صنف تجاري لشركة همم مباشرة بالخانات أدناه:</div>
@@ -101,9 +115,9 @@
                                 <td><b>🫗 زيت طبخ نباتي فاخر</b></td>
                                 <td>
                                     <select name="عبوة_الزيت">
+                                        <option value="🧪 جالون">🧪 جالون</option>
                                         <option value="📦 كرتون">📦 كرتون</option>
                                         <option value="🥫 علبة">🥫 علبة</option>
-                                        <option value="🧪 جالون">🧪 جالون</option>
                                     </select>
                                 </td>
                                 <td><input type="number" name="كمية_الزيت" value="0" min="0"></td>
@@ -122,8 +136,8 @@
                                 <td><b>☕ بن هيل كافيه فاخر</b></td>
                                 <td>
                                     <select name="عبوة_البن">
-                                        <option value="📦 كرتون">📦 كرتون</option>
                                         <option value="🧴 عبوة">🧴 عبوة</option>
+                                        <option value="📦 كرتون">📦 كرتون</option>
                                         <option value="📦 مغلف">📦 مغلف</option>
                                     </select>
                                 </td>
@@ -138,8 +152,3 @@
                                         <option value="🛍️ شوال">🛍️ شوال</option>
                                     </select>
                                 </td>
-                                <td><input type="number" name="كمية_السكر" value="0" min="0"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
