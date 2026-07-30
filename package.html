@@ -34,7 +34,6 @@
         .product-table th { background-color: #161f30; color: var(--text-muted); padding: 10px; font-size: 12px; border-bottom: 1px solid var(--border-color); }
         .product-table td { padding: 12px 10px; border-bottom: 1px solid var(--border-color); font-size: 13px; background-color: var(--panel-dark); }
         .btn { background-color: var(--hemam-blue-light); color: #ffffff; border: none; padding: 10px 22px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 13px; }
-        .btn:hover { background-color: #1d82ba; }
         .btn-success { background-color: var(--success-green); width: 100%; font-size: 14px; padding: 12px; margin-top: 15px; border: none; border-radius: 6px; color: #fff; font-weight: bold; cursor: pointer; }
         .btn-danger { background-color: #991b1b; color: #fff; padding: 4px 8px; font-size: 11px; border: none; border-radius: 4px; cursor: pointer; }
         .sidebar-section { background-color: var(--panel-dark); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; align-self: start; }
@@ -63,6 +62,7 @@
         <div class="layout-grid">
             <div class="main-content">
                 
+                <!-- لوحة 1: بيانات المنشأة وطرق التواصل -->
                 <div class="card-panel">
                     <div class="panel-heading">🏢 بيانات المنشأة وطرق التواصل</div>
                     <div class="panel-subheading">يرجى تعبئة البيانات التالية لاستكمال طلب عرض السعر القانوني لشركة همم المتحدة التجارية.</div>
@@ -76,9 +76,10 @@
                     </div>
                 </div>
 
+                <!-- لوحة 2: قائمة المنتجات والأصناف المفرودة بالكامل والمحمية من أي حظر -->
                 <div class="card-panel">
                     <div class="panel-heading">📦 قائمة المنتجات والأصناف المطلوبة</div>
-                    <div class="panel-subheading">اختر صنف التوريد ونوع العبوة والكمية، ثم اضغط إضافة صنف للقائمة الحية فوريّاً.</div>
+                    <div class="panel-subheading">اختر المنتج ونوع العبوة والكمية بالتفصيل، ثم اضغط إضافة صنف للقائمة الحية فوريّاً.</div>
                     <div class="form-grid" style="grid-template-columns: 1.5fr 1.5fr 1fr; gap: 10px;">
                         <div class="form-group">
                             <label>اسم المنتج المختار (مع الصور التوضيحية)</label>
@@ -100,18 +101,18 @@
                             <label>نوع العبوة (وحدة القياس المحدثة)</label>
                             <select id="p-pack">
                                 <option value="">-- اختر وحدة القياس --</option>
-                                <option value="🛍 كيس">🛍 كيس</option>
+                                <option value="🛍️ كيس">🛍️ كيس</option>
                                 <option value="📦 كرتون">📦 كرتون</option>
                                 <option value="🥫 علبة">🥫 علبة</option>
                                 <option value="🥛 حبة">🥛 حبة</option>
-                                <option value="🛍 شوال">🛍 شوال</option>
+                                <option value="🛍️ شوال">🛍️ شوال</option>
                                 <option value="🔢 درزن">🔢 درزن</option>
                                 <option value="🪵 شدة">🪵 شدة</option>
-                                <option value="🛢 برميل">🛢 برميل</option>
+                                <option value="🛢️ برميل">🛢️ برميل</option>
                                 <option value="🪣 سطل">🪣 سطل</option>
                                 <option value="🧴 عبوة">🧴 عبوة</option>
-                                <option value="🗂 كرت">🗂 كرت</option>
-                                <option value="✉ ظرف">✉ ظرف</option>
+                                <option value="🗂️ كرت">🗂️ كرت</option>
+                                <option value="✉️ ظرف">✉️ ظرف</option>
                                 <option value="📦 مغلف">📦 مغلف</option>
                                 <option value="🧪 جالون">🧪 جالون</option>
                                 <option value="📏 متر">📏 متر</option>
@@ -124,4 +125,3 @@
                     </div>
 
                     <table class="product-table">
-                        <thead><tr><th>المنتج</th><th>العبوة</th><th>الكمية المطلوبة</th><th>إجراء</th></tr></thead>
